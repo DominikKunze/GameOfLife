@@ -3,7 +3,6 @@ package com.gol.Menu;
 import com.gol.Configure.Config;
 import com.gol.GUI.GUI;
 import com.gol.Library.Loader;
-
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;

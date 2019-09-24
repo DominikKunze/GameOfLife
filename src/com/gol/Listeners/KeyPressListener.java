@@ -1,8 +1,6 @@
 package com.gol.Listeners;
 
 import com.gol.Interfaces.KeyPressInterface;
-import com.gol.Listeners.Action.KeyPressAction;
-
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 

@@ -1,7 +1,6 @@
 package com.gol.Menu;
 
 import com.gol.Configure.Config;
-
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;

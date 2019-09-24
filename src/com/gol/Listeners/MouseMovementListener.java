@@ -1,8 +1,6 @@
 package com.gol.Listeners;
 
 import com.gol.Interfaces.MouseMovementInterface;
-import com.gol.Listeners.Action.MouseMovementAction;
-
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseMotionListener;
 
