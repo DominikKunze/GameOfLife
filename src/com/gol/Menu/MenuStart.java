@@ -48,6 +48,7 @@ public class MenuStart {
                 loader.generateCells();
                 loader.loadGameRule(Config.gameRule);
                 loader.calculateSize();
+                loader.startAllThreads();
 
                 // start game gui
                 GUI gui = new GUI();
