@@ -2,6 +2,8 @@ package com.gol.Library;
 
 import com.gol.Configure.Config;
 import com.gol.Object.Cell;
+import com.gol.Runnable.GenerationRunnable;
+import com.gol.Runnable.RepaintRunnable;
 import com.gol.Session.Session;
 
 /**
@@ -65,5 +67,15 @@ public class Loader {
         }
 
         System.out.println("Cells generated!");
+    }
+
+    /**
+     * Start all Threads
+     */
+    public void startAllThreads(){
+        Thread t1 = new Thread(new RepaintRunnable());
+        t1.start();
+        Thread t2 = new Thread(new GenerationRunnable());
+        t2.start();
     }
 }
