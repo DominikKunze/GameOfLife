@@ -13,48 +13,25 @@ public class GenerationCalculator {
      * Calculate the next generation.
      */
     public void calculate(){
-        for(int i=0; i<Session.cells.size(); i++){
+        for(int cellId=0; cellId<Session.cells.size(); cellId++){
             // Position of the cell
-            int x = Session.cells.get(i).getPosX();
-            int y = Session.cells.get(i).getPosY();
+            int x = Session.cells.get(cellId).getPosX();
+            int y = Session.cells.get(cellId).getPosY();
 
-            int count=0;
-            if(Session.cells.get(i).isAlive()){
-                // count alive cells around this cell
-                for(int x1=-1; x1<2; x1++){
-                    for(int y1=-1; y1<2; y1++){
-                        if(x1 == 0 && y1 == 0) {
-
-                        }else{
-                            if (cellOnPointAlive(x + x1, y + y1)) count++;
-                        }
-                    }
-                }
-
+            if(Session.cells.get(cellId).isAlive()){
                 // evaluate the next generation status
-                boolean keepalive = false;
-                for(int ali=0; ali<Session.alive.length; ali++){
-                    if(count == Session.alive[ali]) keepalive = true;
+                boolean keepAlive = false;
+                for(int aliveNumbers=0; aliveNumbers<Session.alive.length; aliveNumbers++){
+                    if(getNeighborCount(cellId) == Session.alive[aliveNumbers]) keepAlive = true;
                 }
-                Session.cells.get(i).setNextGenAlive(keepalive);
+                Session.cells.get(cellId).setNextGenAlive(keepAlive);
             }else{
-                // count alive cells around this cell
-                for(int x1=-1; x1<2; x1++){
-                    for(int y1=-1; y1<2; y1++){
-                        if(x1 == 0 && y1 == 0) {
-
-                        }else{
-                            if (cellOnPointAlive(x + x1, y + y1)) count++;
-                        }
-                    }
-                }
-
                 // evaluate the next generation status
-                boolean doalive = false;
-                for(int ali=0; ali<Session.reborn.length; ali++){
-                    if(count == Session.reborn[ali]) doalive = true;
+                boolean reborn = false;
+                for(int aliveNumbers=0; aliveNumbers<Session.reborn.length; aliveNumbers++){
+                    if(getNeighborCount(cellId) == Session.reborn[aliveNumbers]) reborn = true;
                 }
-                Session.cells.get(i).setNextGenAlive(doalive);
+                Session.cells.get(cellId).setNextGenAlive(reborn);
             }
         }
     }
@@ -77,5 +54,27 @@ public class GenerationCalculator {
             }
         }
         return false;
+    }
+
+    /**
+     * Get number of Neighbors
+     * @param   cellId
+     *          ID of the Cell,
+     * @return int - Number of Neighbors
+     */
+    private int getNeighborCount(int cellId){
+        int x = Session.cells.get(cellId).getPosX();
+        int y = Session.cells.get(cellId).getPosY();
+
+        int count=0;
+        // count alive cells around this cell
+        for(int x1=-1; x1<2; x1++){
+            for(int y1=-1; y1<2; y1++){
+                if(x1 != 0 && y1 != 0) {
+                    if (cellOnPointAlive(x + x1, y + y1)) count++;
+                }
+            }
+        }
+        return count;
     }
 }

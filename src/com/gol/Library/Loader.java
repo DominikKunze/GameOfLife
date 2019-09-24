@@ -46,9 +46,6 @@ public class Loader {
         Session.cellHeight = Config.height/Config.cellsInHeight;
 
         System.out.println("Size calculated!");
-
-        System.out.println(Session.cellWidth);
-        System.out.println(Session.cellHeight);
     }
 
     /**
