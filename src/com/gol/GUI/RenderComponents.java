@@ -1,6 +1,7 @@
 package com.gol.GUI;
 
 import com.gol.Configure.Config;
+import com.gol.Object.Cell;
 import com.gol.Session.Session;
 
 import java.awt.*;
@@ -33,8 +34,9 @@ public class RenderComponents {
     public void drawAliveCells(){
         g2.setColor(Color.BLUE);
         for(int i=0; i<Session.cells.size(); i++){
+            Cell cell = Session.cells.get(i);
             if(Session.cells.get(i).isAlive()){
-                g2.fillRect(Session.cells.get(i).getPosX()*Session.cellWidth,Session.cells.get(i).getPosY()*Session.cellHeight,Session.cellWidth,Session.cellHeight);
+                g2.fillRect(cell.getPosX()*Session.cellWidth,cell.getPosY()*Session.cellHeight,Session.cellWidth,Session.cellHeight);
             }
         }
     }
