@@ -70,7 +70,9 @@ public class GenerationCalculator {
         // count alive cells around this cell
         for(int x1=-1; x1<2; x1++){
             for(int y1=-1; y1<2; y1++){
-                if(x1 != 0 && y1 != 0) {
+                if(x1 == 0 && y1 == 0) {
+
+                }else{
                     if (cellOnPointAlive(x + x1, y + y1)) count++;
                 }
             }
