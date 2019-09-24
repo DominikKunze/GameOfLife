@@ -39,11 +39,5 @@ public class GUI {
         Session.frame.addMouseListener(new MouseClickListener(new MouseClickAction()));
         Session.frame.addKeyListener(new KeyPressListener(new KeyPressAction()));
         Session.frame.setVisible(true);
-
-        // Start threads
-        Thread t1 = new Thread(new RepaintRunnable());
-        t1.start();
-        Thread t2 = new Thread(new GenerationRunnable());
-        t2.start();
     }
 }
