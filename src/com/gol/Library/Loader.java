@@ -54,12 +54,10 @@ public class Loader {
     public void generateCells(){
         System.out.println("Generate cells...");
 
-        int count = 0;
         for(int x=0; x< Config.cellsInWidth; x++){
             for(int y=0; y<Config.cellsInHeight; y++){
-                count++;
                 Session.cells.add(new Cell(x,y));
-                System.out.println("Cell #"+x+" on x="+x+",y="+y+" generated");
+                System.out.println("Cell on x="+x+",y="+y+" generated");
             }
         }
 
