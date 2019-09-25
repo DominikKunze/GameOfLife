@@ -12,7 +12,7 @@ public class Config {
      * Refresh time of the frame in ms.<br>
      * Default 10ms = 100 FPS.
      */
-    public static int refreshTimeInMS = 10;
+    public static final int REFRESH_TIME_IN_MS = 10;
     /**
      * Evolution time in ms.<br>
      * Default 100ms = 10 Evolutions per second.

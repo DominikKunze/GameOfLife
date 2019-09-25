@@ -11,7 +11,7 @@ public class RepaintRunnable implements Runnable{
     public void run() {
         while(true){
             try {
-                Thread.sleep(Config.refreshTimeInMS);
+                Thread.sleep(Config.REFRESH_TIME_IN_MS);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
