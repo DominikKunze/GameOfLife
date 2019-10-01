@@ -11,7 +11,7 @@ import java.awt.*;
  */
 public class Render extends JPanel {
     @Override
-    public void paintComponent(Graphics g) {
+    public void paintComponents(Graphics g) {
         super.paintComponents(g);
         // initialize classes
         Graphics2D g2 = (Graphics2D) g;
