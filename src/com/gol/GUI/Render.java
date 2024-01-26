@@ -11,10 +11,10 @@ import java.awt.*;
  */
 public class Render extends JPanel {
     @Override
-    public void paintComponents(Graphics g) {
-        super.paintComponents(g);
+    public void paintComponent(Graphics g) {
+        super.paintComponent(g);
         // initialize classes
-        Graphics2D g2 = (Graphics2D) g;
+        Graphics2D g2 = (Graphics2D)g;
         RenderComponents renderComponents = new RenderComponents(g2);
 
         // draw components
