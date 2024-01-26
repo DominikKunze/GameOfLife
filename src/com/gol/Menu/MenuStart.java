@@ -47,11 +47,12 @@ public class MenuStart {
                 loader.generateCells();
                 loader.loadGameRule(Config.gameRule);
                 loader.calculateSize();
-                loader.startAllThreads();
 
                 // start game gui
                 GUI gui = new GUI();
                 gui.openGUI();
+
+                loader.startAllThreads();
             }
         });
         settingsButton.addActionListener(new ActionListener() {

@@ -20,32 +20,38 @@ public class MouseClickListener implements MouseListener {
      * @param   MouseClickAction
      *          Action class
      */
-    public MouseClickListener(MouseClickInterface MouseClickAction){
+    public MouseClickListener(MouseClickInterface MouseClickAction)
+    {
         this.action = MouseClickAction;
     }
 
     @Override
-    public void mouseReleased(MouseEvent e) {
+    public void mouseReleased(MouseEvent e)
+    {
 
     }
 
     @Override
-    public void mousePressed(MouseEvent e) {
+    public void mousePressed(MouseEvent e)
+    {
         action.onClick(e);
     }
 
     @Override
-    public void mouseExited(MouseEvent e) {
+    public void mouseExited(MouseEvent e)
+    {
 
     }
 
     @Override
-    public void mouseEntered(MouseEvent e) {
+    public void mouseEntered(MouseEvent e)
+    {
 
     }
 
     @Override
-    public void mouseClicked(MouseEvent e) {
+    public void mouseClicked(MouseEvent e)
+    {
 
     }
 }
